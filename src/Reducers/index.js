@@ -1,5 +1,5 @@
 import dateformatter from "../Actions/tvGuideActions/dateformatter";
-import setScreenSize from "../Actions/tvGuideActions/setScreenSize";
+import setScreenSize from "../Actions/tvGuideActions/checkScreenSize";
 
 const INITAL_STATE = {
   guideList: [],
@@ -7,7 +7,7 @@ const INITAL_STATE = {
   screenWidth: setScreenSize(window.innerWidth).width,
   pageNumber: 1,
   oldPerPage: 0,
-  selectedDate: "12-01-2021"
+  selectedDate: undefined,
 };
 const reducer = (state = INITAL_STATE, action) => {
   debugger;
@@ -21,11 +21,12 @@ const reducer = (state = INITAL_STATE, action) => {
         pageNumber: action.payload.pageNumber,
       };
     case "SET_SCREEN_SIZE":
+      debugger;
       return { ...state, perPageItem: action.payload, guideList: [] };
     case "SET_SELECTED_DATE":
-      return { ...state, selectedDate: action.payload };
-    case "SET_PAGE_PROCESS":
-      return {...state, pageNumber : action.payload === 'minus' ? (state.pageNumber-1) : (state.pageNumber+1) }
+      return { ...state, selectedDate: action.payload, pageNumber : 1};
+    case "SET_SELECTED_PAGE":
+      return {...state,pageNumber:action.payload }
     default:
       return state;
   }

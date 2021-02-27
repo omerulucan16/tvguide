@@ -17,6 +17,7 @@ export const getGuideList = (selectedDate, perPageItem, pageNumber) => (
       res.data.date = selectedDate;
       res.data.pageNumber =pageNumber;
       res.data.perPageItem = perPageItem;
+      
       dispatch({
         type: "SET_GUIDE_LIST",
         payload: res.data,
