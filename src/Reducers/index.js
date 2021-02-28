@@ -8,6 +8,7 @@ const INITAL_STATE = {
   pageNumber: 1,
   oldPerPage: 0,
   selectedDate: undefined,
+  guideListBusy: true,
 };
 const reducer = (state = INITAL_STATE, action) => {
   debugger;
@@ -22,11 +23,16 @@ const reducer = (state = INITAL_STATE, action) => {
       };
     case "SET_SCREEN_SIZE":
       debugger;
-      return { ...state, perPageItem: action.payload, guideList: [] };
+      return { ...state, perPageItem: action.payload };
     case "SET_SELECTED_DATE":
-      return { ...state, selectedDate: action.payload, pageNumber : 1};
+      return { ...state, selectedDate: action.payload, pageNumber: 1 };
     case "SET_SELECTED_PAGE":
-      return {...state,pageNumber:action.payload }
+      return { ...state, pageNumber: action.payload };
+    case "SET_BUSY_INDICATOR_GUIDE":
+      return {
+        ...state,
+        guideListBusy: action.payload,
+      };
     default:
       return state;
   }

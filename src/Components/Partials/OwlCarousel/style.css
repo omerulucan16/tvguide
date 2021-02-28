@@ -8,6 +8,37 @@
 *:focus {
     outline: 0 !important;
 }
+.btn-minus
+{
+	z-index: 9999;;
+	position: absolute;
+	left:0px;
+	margin-top:25px;
+	border-top-right-radius: 100% !important;
+    border-bottom-right-radius: 100% !important;
+	background-color: rgba(0,0,0,0.1)  !important;
+	cursor: pointer !important;
+}
+.btn-minus:hover
+{
+	background-color: rgba(0,0,0,0.3)  !important;
+}
+.btn-increase
+{
+	z-index: 9999;;
+	position: absolute;
+	right:0px;
+	margin-top:25px;
+	border-top-left-radius: 100% !important;
+    border-bottom-left-radius: 100% !important;
+	background-color: rgba(0,0,0,0.1)  !important;
+	cursor: pointer !important;
+}
+.btn-increase:hover
+{
+	
+	background-color: rgba(0,0,0,0.3)  !important;
+}
 .brand-cover
 {	
 	border:1.5px solid #d9d9d9;
@@ -35,6 +66,10 @@
 {
 	border:1px solid #d9d9d9;
 	height:100px;
+}
+.content:hover{
+	border: 2px solid #cf1717;
+	cursor: pointer;
 }
 .content .time
 {
